@@ -62,22 +62,22 @@ module.exports = function () {
             return await api(`returnOrderTrades`)
         },
         returnNextNonce: async function returnNextNonce() {
-            return await this.api(`returnNextNonce`)
+            return await api(`returnNextNonce`)
         },
         returnContractAddress: async function returnContractAddress() {
-            return await this.api(`returnContractAddress`)
+            return await api(`returnContractAddress`)
         },
         order: async function order() {
-            return await this.api(`order`)
+            return await api(`order`)
         },
         trade: async function trade() {
-            return await this.api(`trade`)
+            return await api(`trade`)
         },
         cancel: async function cancel() {
-            return await this.api(`cancel`)
+            return await api(`cancel`)
         },
         withdraw: async function withdraw() {
-            return await this.api(`withdraw`)
+            return await api(`withdraw`)
         },
         websockets: function websockets(ticker) {
             socket.on('message', message => console.log(message));
