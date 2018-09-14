@@ -24,6 +24,28 @@ npm install node-idex-api --save
 })();
 ```
 
+> ### Examples/improvements are coming soon
+```js
+// Documentation
+    returnTicker(symbol)
+    return24Volume()
+    returnOpenOrders(address)
+    returnOrderBook(symbol)
+    returnTradeHistory()
+    returnCurrencies()
+    returnBalances()
+    returnCompleteBalances()
+    returnDepositsWithdrawals()
+    returnOrderTrades()
+    returnNextNonce()
+    returnContractAddress()
+    order()
+    trade()
+    cancel()
+    withdraw()
+    websockets(ticker)
+```
+
 ### returnTicker
 
 Designed to behave similar to the API call of the same name provided by the Poloniex HTTP API, with the addition of highs and lows. Returns all necessary 24 hr data.
