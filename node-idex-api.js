@@ -2,7 +2,6 @@ module.exports = function () {
     'use strict';
     const WebSocket = require('ws');
     const axios = require('axios');
-    const socket = new WebSocket('wss://api-cluster.idex.market');
 
     async function api(action, json = {}) {
         const userAgent = 'Mozilla/4.0 (compatible; Node IDEX API)';
@@ -14,11 +13,11 @@ module.exports = function () {
         try {
             const response = await axios.request({
                 url: action,
-                method: 'POST',
                 headers: headers,
+                method: 'POST',
                 baseURL: 'https://api.idex.market/'
             }, json);
-            if (response && response.status !== 200) return new Error(JSON.stringify(response.data));
+            if ( response && response.status !== 200 ) return new Error(JSON.stringify(response.data));
             return response.data;
         } catch (error) {
             return new Error(JSON.stringify(error.response.data));
@@ -79,10 +78,13 @@ module.exports = function () {
         withdraw: async function withdraw() {
             return await api(`withdraw`)
         },
-        websockets: function websockets(ticker) {
+        
+        // WebSocket live ticker updates
+        subscribe: function subscribe(ticker) {
+            const socket = new WebSocket('wss://api-cluster.idex.market');
             socket.on('message', message => console.log(message));
 
-            //ws.on('pong', handleSocketHeartbeat); // Update timer. Reconnect if it stops updating
+            //ws.on('pong', handleSocketHeartbeat); // Update timer & reconnect zombie sockets
 
             socket.on('error', error => {
                 console.error('WebSocket error: ', error);
@@ -98,6 +100,18 @@ module.exports = function () {
                     }
                 });
             });
+        },
+      
+        // Convert to sortable array. {"ETHBTC":{}} to [{symbol:"ETHBTC"}]
+        obj_to_array: json => {
+          let output = [];
+          for ( let key in json ) {
+            let obj = json[key];
+            obj.symbol = key;
+            output.push(obj);
+          }
+          return output;
         }
+        
     }
 }();
