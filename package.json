@@ -1,6 +1,6 @@
 {
     "name": "node-idex-api",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": "node-idex-api.js",
     "license": "MIT",
     "dependencies": {
@@ -9,7 +9,7 @@
         "ramda": "^0.25.0",
         "request": "^2.87.0",
         "rxjs": "^6.2.1",
-        "uws": "10.148.1",
+        "ws": "^4.1.0",
         "web3-utils": "^1.0.0-beta.34"
     },
     "repository": {
