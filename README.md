@@ -9,7 +9,7 @@ This project is designed to help you make your own projects that interact with t
 
 #### Installation
 ```
-npm install node-idex-api --save
+npm install node-idex-api
 ```
 
 #### Getting started
@@ -22,6 +22,16 @@ npm install node-idex-api --save
     let volume = await idex.return24Volume();
     console.log(volume);
 })();
+```
+
+> ### Example: Top 10 highest volume symbols
+```js
+let ticker = await idex.returnTicker();
+//last high low lowestAsk highestBid percentChange baseVolume quoteVolume
+let sorted = idex.obj_to_array(ticker).sort(function(a, b) {
+    return b.baseVolume - a.baseVolume;
+});
+console.log(sorted.slice(0, 10));
 ```
 
 > ### Examples/improvements are coming soon
