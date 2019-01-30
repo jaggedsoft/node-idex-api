@@ -15,8 +15,9 @@ module.exports = function () {
                 url: action,
                 headers: headers,
                 method: 'POST',
-                baseURL: 'https://api.idex.market/'
-            }, json );
+                baseURL: 'https://api.idex.market/',
+                data: json
+            });
             if ( response && response.status !== 200 ) return new Error( JSON.stringify( response.data ) );
             return response.data;
         } catch ( error ) {
