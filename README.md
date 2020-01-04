@@ -31,6 +31,9 @@ This project is designed to help you make your own projects that interact with t
 // Get ticker
 console.log( await idex.ticker() );
 
+// Get 24h volume/price change statistics
+console.log( await idex.return24Volume() );
+
 // List all currencies
 console.log( await idex.currencies() );
 
@@ -79,7 +82,6 @@ console.log(sorted.slice(0, 10));
 
 ```js
 returnTicker(symbol)
-return24Volume()
 returnOpenOrders(address)
 returnOrderBook(symbol)
 returnOrderStatus(orderHash)
