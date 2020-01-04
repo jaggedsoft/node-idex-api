@@ -9,7 +9,7 @@
 npm install node-idex-api
 ```
 
-This project is designed to help you make your own projects that interact with the [IDEX API](https://api.idex.market/) in node.js.
+This project is designed to help you make your own projects that interact with the [IDEX API](https://docs.idex.market/) in node.js.
 
 #### Getting Started
 ```js
