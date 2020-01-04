@@ -1,20 +1,35 @@
 {
-    "name": "node-idex-api",
-    "version": "0.0.3",
-    "main": "node-idex-api.js",
-    "license": "MIT",
-    "dependencies": {
-        "ccxt": "^1.14.288",
-        "ethereumjs-util": "^5.2.0",
-        "ramda": "^0.25.0",
-        "request": "^2.87.0",
-        "rxjs": "^6.2.1",
-        "ws": "^4.1.0",
-        "web3-utils": "^1.0.0-beta.34",
-        "axios": "^0.18.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/jaggedsoft/node-idex-api.git"
-    }
+  "name": "node-idex-api",
+  "version": "0.0.3",
+  "description": "IDEX Javascript API https://github.com/jaggedsoft/node-idex-api",
+  "main": "idex.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "request": "^2.88.0",
+    "lodash": "^4.17.5",
+    "bignumber.js": "^4.0.4",
+    "ethereumjs-util": "^5.1.5",
+    "web3-utils": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaggedsoft/node-idex-api.git"
+  },
+  "keywords": [
+    "idex",
+    "cryptocurrency",
+    "exchange",
+    "api",
+    "dex",
+    "trading"
+  ],
+  "author": "Jon Eyrick <jon@liquidity.ltd> (https://github.com/jaggedsoft)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaggedsoft/node-idex-api/issues"
+  },
+  "homepage": "https://github.com/jaggedsoft/node-idex-api",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
 }
